@@ -1,5 +1,5 @@
 console.log("game1.js is linked!")
-let ct = 8
+
 let sentences = [
 	"start",
 	"great now keep typing",
