@@ -49,7 +49,7 @@ class Game {
         // this._ctx.fill();
         // this._ctx.closePath();  
         const image = document.createElement("img")
-        image.src = "http://www.lessmilk.com/game/save-the-city/images/bomb.png";
+        image.src = "image/bomb.png";
         image.width = 50
         image.height = 50
         image.addEventListener('load', e => {
@@ -60,7 +60,7 @@ class Game {
 
     drawCity() {
         const image = document.createElement("img")
-        image.src = "http://www.lessmilk.com/game/save-the-city/images/city.png";
+        image.src = "image/city.png";
         image.addEventListener('load', e => {
             this._ctx.drawImage(image, 50, 350)
         })
@@ -68,7 +68,7 @@ class Game {
 
     drawExplosion() {
         const image = document.createElement("img")
-        image.src = "http://www.lessmilk.com/game/save-the-city/images/explosion.png";
+        image.src = "image/explosion.png";
         image.addEventListener('load', e => {
 
             this._ctx.globalAlpha = 0;
