@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type-Type-Type</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="gameBody">
+    <div id="gameContainer">
+      <h1>Type-Type-Type</h1>
+      <button id="open-modal">About</button>
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">About the Game</div>
+          <button id="close-modal" class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          This is a keyboard typing game where player has to type as fast as possible before the bomb touch on the land. The speed of the bomb falling from the sky will increase when the player completed a sentence or word. When the bomb is fall onto the ground and exploded, the game is over. Have fun!
+        </div>
+      </div>
+      <div id="overlay"></div>
+      <button type="button" id="start" >Start</button>
+    </div>
+  </body>
+  <script src="../js/load.js"></script>
+  <script src="../js/game1.js"></script>
+</html>
