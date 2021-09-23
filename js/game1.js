@@ -1,25 +1,5 @@
 console.log("game1.js is linked!")
 
-let sentences = [
-	"start start",
-	"great now keep typing",
-	"save us from the bomb",
-	"here is being evacuated right now",
-	"so each keystroke is saving lives",
-
-	"oh we have zome kommuncation ichues",
-	"can yu styll haer us",
-	"ze bomb iz cosyng interrrfrances",
-	"kip tyipng ur diong a good zob",
-	"yuo svaed allmoost eevrinoe",
-
-	"quysd skjlij qsiap apzokh z",
-	"faondzakjazhedluyedanljlcquef lol",
-	"- you are not supposed to see this -",
-	" - are you a hacker? - "
-];
-
-
 class Game {
     constructor(canvas, width, height) {
         canvas.width = width;
@@ -108,7 +88,7 @@ class Game {
         
         if(this.bombUp){
             this.bombUp = false;
-            this.bombY -= 12
+            this.bombY -= 14
         }
         if(this.bombY >= canvas.height - 200)
         this.end()
@@ -130,13 +110,13 @@ class Game {
 
     displaySentence() {
         this._ctx.clearRect(0, 100, canvas.width, canvas.height);
-        this._ctx.font = "22px verdana";
+        this._ctx.font = "18px verdana";
         this._ctx.fillStyle = 'white';
         this._ctx.fillText(this.text, canvas.width-480, canvas.height-20);
     }
 
     drawSentence() {
-        this.word = sentences[this.level]
+        this.word = readySentence[this.level]
         this.text = this.word;
     
     }
@@ -159,7 +139,7 @@ class Game {
             if(this.i == this.word.length) {
                 this.i = 0;
                 this.level +=1;
-                this.bombDy -= 0.2
+                this.bombDy -= 0.8
             }
         }
     }
@@ -168,7 +148,7 @@ class Game {
         let bombStart = setInterval(() => {
             if(this.dead)
             return;
-            
+            getData()
             this.start()
             if(this.dead) {
                 clearInterval(bombStart)
