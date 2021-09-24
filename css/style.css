@@ -1,8 +1,8 @@
 /* modal-about class (START) */
-* {
+/* * {
   padding: 0;
   margin: 0;
-}
+} */
 
 *,
 *::after,
@@ -10,6 +10,45 @@
   box-sizing: border-box;
 }
 
+.gameBody {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  font-size: 20px;
+  margin: 20px 0px;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+  background-color: lightgray;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: gray;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em gray;
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
+}
+
+#gameTitle {
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  color: #1a237e;
+  text-shadow: 1px 1px #2274a5, 2px 2px #f75c03, 3px 3px #2274a5,
+    4px 4px #f75c03, 5px 5px #2274a5, 6px 6px #f75c03, 7px 7px #2274a5,
+    8px 8px #f75c03;
+}
 .modal {
   position: fixed;
   top: 50%;
@@ -39,6 +78,7 @@
 .modal-header .title {
   font-size: 1.25rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .modal-header .close-button {
@@ -74,17 +114,56 @@
 
 /* modal-about class (END) */
 
-/* #gameContainer {
-  width: auto;
+/* end screen start  */
+
+#endScreen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 101;
+  width: 600px;
+  height: 400px;
+  background-color: black;
+  display: none;
+  transition: 200ms ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+#endScreenContent {
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+  background-color: white;
+  margin: 80px;
+  text-align: center;
+}
+
+#btnReplay {
+  background-color: green;
+  border: none;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+/* end screen end */
+
+#gameContainer {
   height: 500px;
-  background: yellow;
-  overflow: hidden;
-} */
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+  align-items: center;
+}
 
 .gameBody {
   margin-bottom: 20px;
   text-align: center;
-  background: lightblue;
+  background-image: url("../image/canvas\ background.jpg");
 }
 
 canvas {
