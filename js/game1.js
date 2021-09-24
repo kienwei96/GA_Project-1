@@ -21,13 +21,7 @@ class Game {
         this.bombUp = false;
     }
 
-    drawBomb() {
-        // let bombSize = 10;
-        // this._ctx.beginPath();
-        // this._ctx.arc(this.bombX, this.bombY, bombSize, 0, Math.PI*2);
-        // this._ctx.fillStyle = "black";
-        // this._ctx.fill();
-        // this._ctx.closePath();  
+    drawBomb() { 
         const image = document.createElement("img")
         image.src = "../image/bomb.png";
         image.width = 50
@@ -92,7 +86,9 @@ class Game {
         }
         if(this.bombY >= canvas.height - 200)
         this.end()
+    
     }
+
     end() {
 
         this.dead = true
@@ -110,9 +106,24 @@ class Game {
 
     displaySentence() {
         this._ctx.clearRect(0, 100, canvas.width, canvas.height);
+        // draw sentence background
+        this._ctx.beginPath();
+        this._ctx.fillStyle = 'black';
+        this._ctx.fillRect(0, 450, 500, 100);
+        this._ctx.fill();
+        // fill sentence
         this._ctx.font = "18px verdana";
         this._ctx.fillStyle = 'white';
         this._ctx.fillText(this.text, canvas.width-480, canvas.height-20);
+        
+    }
+
+    displayEndScreen() {
+        setTimeout(() => {
+            $('#gameContainer').remove();
+            EndScreen()
+        }, 1500)
+
     }
 
     drawSentence() {
@@ -133,6 +144,7 @@ class Game {
         if (this.text.substring(0, 1) === this.char){
             let alphabet = this.text.substring(0, 1);
             this.text = (this.text).replace(alphabet, "");
+            typeAudio()
             this.i +=1;
             this.score +=5;
             this.bombUp = true;
@@ -153,9 +165,13 @@ class Game {
             if(this.dead) {
                 clearInterval(bombStart)
                 this.drawExplosion()
+                bombAudio();
                 $('#gameContainer').effect("shake", { direction: "up", times: 6}, 1000);
                 this.dead = false
                 console.log('end')
+                finalScore.push(this.score)
+                this.displayEndScreen()
+            
             }
         }, 100)
     }
@@ -163,12 +179,19 @@ class Game {
     
 }
 
+let finalScore = [];
+const EndScreen = () => {
+    $('#endScreen').css("display", "block")
+    $('#txtEndMessage').text(`Your score is ${finalScore[0]}`); 
+    console.log('reply?')
+  }
 
 $("#start").on("click", function() {
     $('#gameContainer').empty()
     $('#gameContainer').append($('<canvas/>',{'id':'canvas'}));
     const game1 = new Game($('#canvas')[0], 500,500);
     game1.run()
+    console.log(game1.score)
     })
         
     
