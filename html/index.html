@@ -17,8 +17,8 @@
   </head>
   <body class="gameBody">
     <div id="gameContainer">
-      <h1>Type-Type-Type</h1>
-      <button id="open-modal">About</button>
+      <h1 id="gameTitle">Type-Type-Type</h1>
+      <button class="button" id="open-modal">About</button>
       <div class="modal" id="modal">
         <div class="modal-header">
           <div class="title">About the Game</div>
@@ -29,7 +29,22 @@
         </div>
       </div>
       <div id="overlay"></div>
-      <button type="button" id="start" >Start</button>
+      <button type="button" class="button" id="start" >Start</button>
+    </div>
+    <div id="endScreen">
+      <div id="endScreenContent">
+        <h1 id ="txtEndTitle"> Game Over!</h1>
+        <h2 id ="txtEndMessage"></h2>
+        <div id="btnReplay" class="button" onclick="replay()"> Play Again</div>
+      </div>
+    </div>
+    <div class="all-audio">
+      <audio id="boom-audio">
+        <source src = "../source/bomb.wav" type="audio/wav">
+      </audio>
+      <audio id="type-audio">
+        <source src = "../source/laser.wav" type="audio/wav">
+      </audio>
     </div>
     </div>
   </body>
