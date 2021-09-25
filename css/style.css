@@ -55,6 +55,7 @@
   width: 150px;
   font-size: 20px;
   font-family: myAtariFont;
+  font-style: italic;
 }
 
 #gameTitle {
@@ -196,7 +197,12 @@
 }
 
 canvas {
-  background: orange;
+  background: transparent;
+  background-image: url("../image/endScreen.png");
   display: block;
   margin: 0 auto;
+}
+
+#scoreboard {
+  display: none;
 }
