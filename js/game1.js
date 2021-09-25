@@ -164,7 +164,7 @@ class Game {
                 this.dead = false
                 console.log('end')
                 finalScore.push(this.score)
-                // this.displayEndScreen()
+                this.displayEndScreen()
                 store();
             
             }
