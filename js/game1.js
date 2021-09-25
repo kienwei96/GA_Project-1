@@ -10,7 +10,7 @@ class Game {
         this.bombY = (canvas.height)-500;
         this.bombX = (canvas.width)/2;
         this.bombDx = 2;
-        this.bombDy = -5;
+        this.bombDy = -4;
         this._ctx = canvas.getContext('2d');
         this.dead = false;
         this.level = 0;
@@ -98,7 +98,7 @@ class Game {
 
     displayScore() {
         this._ctx.clearRect(0, -150, canvas.width, canvas.height);
-        this._ctx.font = "18px Arial";
+        this._ctx.font = "oblique 18px Arial";
         this._ctx.fillStyle = 'black';
         this._ctx.fillText("SCORE:" + this.score, canvas.width-150, canvas.height-450);
         
@@ -122,7 +122,7 @@ class Game {
         setTimeout(() => {
             $('#gameContainer').remove();
             EndScreen()
-        }, 1500)
+        }, 1800)
 
     }
 
@@ -179,12 +179,6 @@ class Game {
     
 }
 
-let finalScore = [];
-const EndScreen = () => {
-    $('#endScreen').css("display", "block")
-    $('#txtEndMessage').text(`Your score is ${finalScore[0]}`); 
-    console.log('reply?')
-  }
 
 $("#start").on("click", function() {
     $('#gameContainer').empty()
