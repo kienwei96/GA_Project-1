@@ -23,9 +23,7 @@ class Game {
 
     drawBomb() { 
         const image = document.createElement("img")
-        image.src = "../image/bomb.png";
-        image.width = 50
-        image.height = 50
+        image.src = "../image/bomb3.png";
         image.addEventListener('load', e => {
             this._ctx.drawImage(image, (this.bombX-25), this.bombY)
         })
@@ -42,7 +40,7 @@ class Game {
 
     drawExplosion() {
         const image = document.createElement("img")
-        image.src = "../image/explosion.png";
+        image.src = "../image/bomb-explosion3.png";
         image.addEventListener('load', e => {
 
             this._ctx.globalAlpha = 0;
@@ -50,7 +48,7 @@ class Game {
 
             const imgFade = setInterval(() => {
                 this._ctx.globalAlpha +=0.1;
-                this._ctx.drawImage(image, 50, 250)
+                this._ctx.drawImage(image, 70, 250)
                 i++;
                 if(i>=10) {
                         clearInterval(imgFade)
@@ -67,7 +65,7 @@ class Game {
     start() {
         this.drawBomb()
 
-        this.drawCity()
+        // this.drawCity()
 
         if(this.i ==0)
         this.drawSentence()
@@ -82,9 +80,9 @@ class Game {
         
         if(this.bombUp){
             this.bombUp = false;
-            this.bombY -= 14
+            this.bombY -= 11
         }
-        if(this.bombY >= canvas.height - 200)
+        if(this.bombY >= canvas.height - 150)
         this.end()
     
     }
@@ -92,29 +90,25 @@ class Game {
     end() {
 
         this.dead = true
-        // this.drawExplosion()
-        // $('#gameContainer').effect("shake", { direction: "up", times: 6}, 1000);
+
     }
 
     displayScore() {
         this._ctx.clearRect(0, -150, canvas.width, canvas.height);
-        this._ctx.font = "oblique 18px Arial";
+        this._ctx.font = "oblique 26px Arial";
         this._ctx.fillStyle = 'black';
-        this._ctx.fillText("SCORE:" + this.score, canvas.width-150, canvas.height-450);
+        this._ctx.fillText("SCORE:" + this.score, canvas.width-170, canvas.height-500);
         
     }
 
     displaySentence() {
         this._ctx.clearRect(0, 100, canvas.width, canvas.height);
         // draw sentence background
-        this._ctx.beginPath();
-        this._ctx.fillStyle = 'black';
-        this._ctx.fillRect(0, 450, 500, 100);
-        this._ctx.fill();
+        
         // fill sentence
-        this._ctx.font = "18px verdana";
-        this._ctx.fillStyle = 'white';
-        this._ctx.fillText(this.text, canvas.width-480, canvas.height-20);
+        this._ctx.font = "bold 18px verdana";
+        this._ctx.fillStyle = 'black';
+        this._ctx.fillText(this.text, canvas.width-650, canvas.height-30);
         
     }
 
@@ -122,7 +116,7 @@ class Game {
         setTimeout(() => {
             $('#gameContainer').remove();
             EndScreen()
-        }, 1800)
+        }, 2000)
 
     }
 
@@ -170,7 +164,8 @@ class Game {
                 this.dead = false
                 console.log('end')
                 finalScore.push(this.score)
-                this.displayEndScreen()
+                // this.displayEndScreen()
+                store();
             
             }
         }, 100)
@@ -181,11 +176,11 @@ class Game {
 
 
 $("#start").on("click", function() {
-    $('#gameContainer').empty()
+    $('#scoreboard').css("display", "block");
+    $('#gameContainer').empty();
     $('#gameContainer').append($('<canvas/>',{'id':'canvas'}));
-    const game1 = new Game($('#canvas')[0], 500,500);
+    const game1 = new Game($('#canvas')[0], 700,600);
     game1.run()
-    console.log(game1.score)
     })
         
     
