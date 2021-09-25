@@ -31,3 +31,10 @@ const replay = () => {
   location.reload()
   $('#endScreen').css("display", "none")
 }
+
+let finalScore = [];
+const EndScreen = () => {
+    $('#endScreen').css({"display":"block"})
+    $('#txtEndMessage').text(`Your score is ${finalScore[0]}`); 
+    console.log('reply?')
+  }
