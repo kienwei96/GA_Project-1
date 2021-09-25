@@ -1,8 +1,17 @@
-/* modal-about class (START) */
-/* * {
-  padding: 0;
-  margin: 0;
-} */
+@keyframes blink {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
+
+@font-face {
+  font-family: myAtariFont;
+  src: url(../source/AtariSmall.ttf);
+}
 
 *,
 *::after,
@@ -40,6 +49,12 @@
   box-shadow: none;
   position: relative;
   top: 0.2em;
+}
+
+#btnReplay {
+  width: 150px;
+  font-size: 20px;
+  font-family: myAtariFont;
 }
 
 #gameTitle {
@@ -112,6 +127,10 @@
   pointer-events: all;
 }
 
+#open-modal {
+  margin: 40px;
+}
+
 /* modal-about class (END) */
 
 /* end screen start  */
@@ -123,9 +142,8 @@
   z-index: 101;
   width: 600px;
   height: 400px;
-  background-color: black;
+  background-image: url("../image/endScreen.png");
   display: none;
-  transition: 200ms ease-in-out;
   transform: translate(-50%, -50%);
 }
 
@@ -133,7 +151,7 @@
   width: 400px;
   height: 200px;
   padding: 20px;
-  background-color: white;
+  background-color: transparent;
   margin: 80px;
   text-align: center;
 }
@@ -141,13 +159,24 @@
 #btnReplay {
   background-color: green;
   border: none;
-  padding: 16px 32px;
+  padding: 16px 0px;
   margin: 4px 2px;
   color: white;
   display: inline-block;
   text-align: center;
   cursor: pointer;
   transition-duration: 0.4s;
+}
+
+#txtEndTitle {
+  letter-spacing: 5px;
+  animation: blink 1s steps(4, start) infinite;
+  font-family: myAtariFont;
+}
+
+#txtEndMessage {
+  letter-spacing: 3px;
+  font-family: myAtariFont;
 }
 
 /* end screen end */
