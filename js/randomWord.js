@@ -1,5 +1,5 @@
 let randomSentence = [];
-let readySentence = ["start to type this sentence", "press spacebar for empty space"];
+let readySentence = ["hey start to type this sentence", "lets go"];
 
 const split = () => {
     for(let i=0; i<randomSentence.length; i++) {
