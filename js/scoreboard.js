@@ -1,10 +1,10 @@
 $(document).ready(() => {
     if(typeof localStorage["highScore"] !== 'undefined') {
-        $('#scoreboard').text('Your highest score is' + " " + localStorage["highScore"]); 
+        $('#scoreboard').text('Highest score:' + " " + localStorage["highScore"]); 
     }
     else {
         localStorage["highScore"] =0;
-        $('#scoreboard').text('Your highest score is 0');
+        $('#scoreboard').text('Highest score: 0');
     }
 })
 
@@ -15,6 +15,6 @@ const store = () => {
     }
 
     if(typeof localStorage["highScore"] !== 'undefined') {
-        $('#scoreboard').text('Your highest score is' + " " + localStorage["highScore"]); 
+        $('#scoreboard').text('Highest score:' + " " + localStorage["highScore"]); 
     }
 }

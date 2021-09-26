@@ -30,14 +30,6 @@ class Game {
         this._ctx.clearRect(-150, -150, canvas.width, canvas.height-300);
     }
 
-    drawCity() {
-        const image = document.createElement("img")
-        image.src = "../image/city.png";
-        image.addEventListener('load', e => {
-            this._ctx.drawImage(image, 50, 350)
-        })
-    }
-
     drawExplosion() {
         const image = document.createElement("img")
         image.src = "../image/bomb-explosion3.png";
@@ -48,7 +40,7 @@ class Game {
 
             const imgFade = setInterval(() => {
                 this._ctx.globalAlpha +=0.1;
-                this._ctx.drawImage(image, 70, 250)
+                this._ctx.drawImage(image, 100, 200)
                 i++;
                 if(i>=10) {
                         clearInterval(imgFade)
@@ -65,8 +57,6 @@ class Game {
     start() {
         this.drawBomb()
 
-        // this.drawCity()
-
         if(this.i ==0)
         this.drawSentence()
 
@@ -74,7 +64,7 @@ class Game {
 
         if(this.bombY < canvas.height)
         this.bombY -= this.bombDy
-        this.key()
+        
         this.updateWord()
         this.displayScore()
         
@@ -83,13 +73,19 @@ class Game {
             this.bombY -= 11
         }
         if(this.bombY >= canvas.height - 150)
-        this.end()
+        this.dead = true;
     
     }
 
     end() {
-
-        this.dead = true
+        console.log('end')
+        this.drawExplosion()
+        bombAudio();
+        $('#gameContainer').effect("shake", { direction: "up", times: 6}, 1000);
+        this.dead = false
+        finalScore.push(this.score)
+        this.displayEndScreen()
+        store();
 
     }
 
@@ -116,6 +112,7 @@ class Game {
         setTimeout(() => {
             $('#gameContainer').remove();
             EndScreen()
+            $('#scoreboard').css("display", "block");
         }, 2000)
 
     }
@@ -158,17 +155,12 @@ class Game {
             this.start()
             if(this.dead) {
                 clearInterval(bombStart)
-                this.drawExplosion()
-                bombAudio();
-                $('#gameContainer').effect("shake", { direction: "up", times: 6}, 1000);
-                this.dead = false
-                console.log('end')
-                finalScore.push(this.score)
-                this.displayEndScreen()
-                store();
-            
+                this.end()
             }
         }, 100)
+
+        this.key()
+        
     }
 
     
@@ -176,10 +168,9 @@ class Game {
 
 
 $("#start").on("click", function() {
-    $('#scoreboard').css("display", "block");
     $('#gameContainer').empty();
     $('#gameContainer').append($('<canvas/>',{'id':'canvas'}));
-    const game1 = new Game($('#canvas')[0], 700,600);
+    const game1 = new Game($('#canvas')[0], 700,550);
     game1.run()
     })
         
