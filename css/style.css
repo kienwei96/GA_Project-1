@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+
 @keyframes blink {
   from {
     visibility: visible;
@@ -205,4 +207,8 @@ canvas {
 
 #scoreboard {
   display: none;
+  font-family: "Chewy";
+  letter-spacing: 2px;
+  font-size: 80px;
+  height: 200px;
 }
