@@ -2,6 +2,8 @@
 
 const $openModalButtons = $('#open-modal');
 const $closeModalButtons = $('#close-modal');
+const $openBoardButtons = $('#open-board');
+const $closeBoardButtons = $('#close-board');
 const $overlay = $('#overlay');
 
 $openModalButtons.on('click', () => {
@@ -10,11 +12,21 @@ $openModalButtons.on('click', () => {
 
 })
 
-
 $closeModalButtons.on('click', () => {
    $('.modal').removeClass('active');
     $overlay.removeClass('active');
   })
+
+$openBoardButtons.on('click', () => {
+    $('.leaderboard').addClass('active');
+    $overlay.addClass('active');
+  
+})
+
+$closeBoardButtons.on('click', () => {
+  $('.leaderboard').removeClass('active');
+   $overlay.removeClass('active');
+ })
 
 const bombAudio = () => {
   $('#boom-audio').prop('volume', 0.1);

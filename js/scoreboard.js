@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    showHighScores()
     if(typeof localStorage["highScore"] !== 'undefined') {
         $('#scoreboard').text('Highest score:' + " " + localStorage["highScore"]); 
     }

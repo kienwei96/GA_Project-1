@@ -26,10 +26,15 @@
   justify-content: center;
 }
 
+#start,
+#open-board {
+  margin: 40px;
+}
+
 .button {
   font-size: 20px;
   margin: 20px 0px;
-  width: 100px;
+  width: 200px;
   height: 50px;
   text-align: center;
   display: inline-block;
@@ -45,6 +50,10 @@
   border-radius: 7px;
   box-shadow: 0 0.2em gray;
   cursor: pointer;
+}
+
+#start {
+  margin: 20px;
 }
 
 .button:active {
@@ -67,6 +76,8 @@
     4px 4px #f75c03, 5px 5px #2274a5, 6px 6px #f75c03, 7px 7px #2274a5,
     8px 8px #f75c03;
 }
+
+/* About modal */
 .modal {
   position: fixed;
   top: 50%;
@@ -77,15 +88,39 @@
   border-radius: 10px;
   z-index: 10;
   background-color: white;
-  width: 500px;
+  width: 600px;
   max-width: 80%;
-  height: 300px;
+  height: 350px;
 }
 
-.modal.active {
+.leaderboard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background: radial-gradient(
+    ellipse farthest-corner at center top,
+    #f39264 0%,
+    #f2606f 100%
+  );
+  border-radius: 10px;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+  width: 500px;
+  max-width: 80%;
+  height: 500px;
+}
+
+.modal.active,
+.leaderboard.active {
   transform: translate(-50%, -50%) scale(1);
 }
-.modal-header {
+
+.modal-header,
+.board-header {
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
@@ -99,6 +134,12 @@
   text-align: center;
 }
 
+.board-header .title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 .modal-header .close-button {
   cursor: pointer;
   border: none;
@@ -108,7 +149,26 @@
   font-weight: bold;
 }
 
-.modal-body {
+.board-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.board-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body,
+.board-body {
   padding: 10px 15px;
   text-align: justify;
 }
@@ -211,4 +271,67 @@ canvas {
   letter-spacing: 2px;
   font-size: 55px;
   height: 200px;
+}
+
+/* ol li {
+  list-style-type: none;
+  text-align: center;
+  margin: 20px;
+} */
+
+ol {
+  counter-reset: leaderboard;
+}
+
+li {
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+  counter-increment: leaderboard;
+  padding: 18px 10px 18px 50px;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1, 1);
+}
+
+mark {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 18px 10px 18px 50px;
+  margin: 0;
+  background: none;
+  color: #fff;
+}
+
+small {
+  font-size: 30px;
+  position: relative;
+  z-index: 2;
+  display: block;
+  text-align: right;
+}
+
+#boardlist0 {
+  background: #fa6855;
+}
+
+#boardlist1 {
+  background: #e0574f;
+}
+
+#boardlist2 {
+  background: #d7514d;
+}
+
+#boardlist3 {
+  background: #cd4b4b;
+}
+
+#boardlist4 {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
 }

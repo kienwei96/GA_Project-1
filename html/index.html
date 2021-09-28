@@ -10,7 +10,6 @@
       charset="utf-8"
     ></script>
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-  <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 </head>
     <link rel="stylesheet" href="../css/style.css" />
@@ -26,6 +25,17 @@
         </div>
         <div class="modal-body">
           This is a keyboard word typing game where players can train their typing speed and accuracy through this game.  <br><br> When the game is started, a sentence of word will appear together with a bomb start to fall from the sky. Players will start to type and complete the sentence as fast as possible. Every completed sentence will increase the speed of the falling bomb. When the bomb is fall onto the ground and exploded, the game is over. Have fun!
+        </div>
+      </div>
+      <button class="button" id="open-board">LeaderBoard</button>
+      <div class="leaderboard" id="leaderboard">
+        <div class="board-header">
+           <img src="../image/cup.png" alt="cup"> 
+          <div class="title">Top 5 High Scores</div>
+          <button id="close-board" class="close-button">&times;</button>
+        </div>
+        <div class="board-body">
+          <ol id="highScores"></ol>
         </div>
       </div>
       <div id="overlay"></div>
@@ -51,6 +61,7 @@
     </div>
   </body>
   <script src="../js/load.js"></script>
+  <script src="../js/leaderboard.js"></script>
   <script src="../js/scoreboard.js"></script>
   <script src="../js/randomWord.js"></script>
   <script src="../js/game1.js"></script>
