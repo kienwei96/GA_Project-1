@@ -1,13 +1,10 @@
-let randomSentence = [];
-let readySentence = ["hey start to type this sentence", "lets go"];
+let readySentence = ["hey start to type this sentence", "yeah keep going", "lets go"];
 
-const split = () => {
-    for(let i=0; i<randomSentence.length; i++) {
-        let lowerCase = randomSentence[i].toLowerCase();
+
+const split = (data) => {
+    let lowerCase = data.value.toLowerCase();
         let removeSpecialChar = lowerCase.replace(/[^a-zA-Z ]/g, "");
         readySentence.push(removeSpecialChar);
-    }
-
 }
 
 
@@ -19,7 +16,8 @@ const getData = () => {
 
 const successHandler = (data) => {
     renderSentence(data)
-    split()
+    split(data)
+    console.log(readySentence)
 }
 
 const errHandler = (err) => {
@@ -27,8 +25,7 @@ const errHandler = (err) => {
 };
 
 const renderSentence = (data) => {
-    randomSentence.push(data.value)
+    console.log(data.value)
 }
 
 
-console.log(randomSentence)
