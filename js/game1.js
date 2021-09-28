@@ -113,6 +113,7 @@ class Game {
             $('#gameContainer').remove();
             EndScreen()
             $('#scoreboard').css("display", "block");
+            checkHighScore(this.score)
         }, 2000)
 
     }
@@ -152,7 +153,6 @@ class Game {
         let bombStart = setInterval(() => {
             if(this.dead)
             return;
-            // getData()
             this.start()
             if(this.dead) {
                 clearInterval(bombStart)
