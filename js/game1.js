@@ -140,9 +140,10 @@ class Game {
             this.score +=5;
             this.bombUp = true;
             if(this.i == this.word.length) {
+                getData()
                 this.i = 0;
                 this.level +=1;
-                this.bombDy -= 0.8
+                this.bombDy -= 0.6
             }
         }
     }
@@ -151,7 +152,7 @@ class Game {
         let bombStart = setInterval(() => {
             if(this.dead)
             return;
-            getData()
+            // getData()
             this.start()
             if(this.dead) {
                 clearInterval(bombStart)
@@ -168,6 +169,7 @@ class Game {
 
 
 $("#start").on("click", function() {
+    getData()
     $('#gameContainer').empty();
     $('#gameContainer').append($('<canvas/>',{'id':'canvas'}));
     const game1 = new Game($('#canvas')[0], 700,550);
