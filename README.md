@@ -53,17 +53,17 @@ The **API** is used to randomly generate a sentence for the game.
    <img src="image/Game_Explodepage.png" width ="500px" />
   </td></tr></table>
 
-4. If there is any high scores achieved, there will be a prompt box appear to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for leaderboard update.
+4. If there is any new high score achieved, there will be a prompt box appear to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for leaderboard update.
 <table><tr><td>
    <img src="image/Game_Highsores.png" width ="500px" />
   </td></tr></table>
 
-5. Once the game is over, the new achieved score and a 'Play Again' button will appear in the new frame. Also, the highest score will be displayed on the top of the frame. In order to play again or back to starting page, player would just need to click the 'Play Again' button.
+5. Once the game is over, the new achieved score and a 'Play Again' button will appear in the pop out box. Also, the highest score will be displayed on the top of the frame. In order to play again or back to starting page, player would just need to click the 'Play Again' button.
 <table><tr><td>
    <img src="image/Game_Endpage.png" width ="500px" />
   </td></tr></table>
 
-6. Player can check for the Top 5 High scores by clicking the 'LeaderBoard' button. The LeaderBoard was created to display only the top 5 high scores which including the player name and score. The order is followed by highest score record to lowest score record.
+6. Player can check for the Top 5 High scores by clicking the 'LeaderBoard' button. The LeaderBoard was created to display only the top 5 high scores which including the player name and score. The order is followed by the highest score record to the lowest score record.
 <table><tr><td>
    <img src="image/Game_LeaderBoard.png" width ="500px" />
   </td></tr></table>
