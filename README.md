@@ -55,7 +55,7 @@ The **API** is used to randomly generate a sentence for the game.
 
 4. If there is any high scores achieved, there will be a prompt box appear to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for leaderboard update.
 <table><tr><td>
-   <img src="image/Game_Highscores.png" width ="500px" />
+   <img src="image/Game_Highsores.png" width ="500px" />
   </td></tr></table>
 
 5. Once the game is over, the new achieved score and a 'Play Again' button will appear in the new frame. Also, the highest score will be displayed on the top of the frame. In order to play again or back to starting page, player would just need to click the 'Play Again' button.
