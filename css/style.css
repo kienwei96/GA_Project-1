@@ -27,8 +27,9 @@
 }
 
 #start,
-#open-board {
-  margin: 40px;
+#open-board,
+#open-modal {
+  margin: 20px;
 }
 
 .button {
@@ -50,10 +51,6 @@
   border-radius: 7px;
   box-shadow: 0 0.2em gray;
   cursor: pointer;
-}
-
-#start {
-  margin: 20px;
 }
 
 .button:active {
@@ -190,9 +187,9 @@
   pointer-events: all;
 }
 
-#open-modal {
-  margin: 40px;
-}
+/* #open-modal {
+  margin: 20px;
+} */
 
 /* modal-about class (END) */
 
