@@ -15,7 +15,7 @@ function checkHighScore(score) {
         const newScore = { name, score };
         saveHighScore(newScore, highScores);
         console.log(highScores)
-        showHighScores(highScores)
+        showHighScores()
     }
 }
 
@@ -54,4 +54,3 @@ function showHighScores() {
     
 
 }
-
