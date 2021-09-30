@@ -84,7 +84,7 @@ class Game {
         $('#gameContainer').effect("shake", { direction: "up", times: 6}, 1000);
         this.dead = false
         finalScore.push(this.score)
-        this.displayEndScreen()
+        this.checkScore()
         store();
 
     }
@@ -108,14 +108,11 @@ class Game {
         
     }
 
-    displayEndScreen() {
+    checkScore() {
         setTimeout(() => {
             $('#gameContainer').remove();
-            EndScreen()
-            $('#scoreboard').css("display", "block");
             checkHighScore(this.score)
         }, 2000)
-
     }
 
     drawSentence() {

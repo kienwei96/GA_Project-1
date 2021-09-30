@@ -187,10 +187,27 @@
   pointer-events: all;
 }
 
-/* #open-modal {
-  margin: 20px;
-} */
+#enterName-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 101;
+  width: 600px;
+  height: 200px;
+  background-image: url("../image/endScreen.png");
+  display: none;
+  transform: translate(-50%, -50%);
+}
 
+#enterName-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+}
 /* modal-about class (END) */
 
 /* end screen start  */
