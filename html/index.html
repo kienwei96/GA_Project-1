@@ -41,6 +41,21 @@
       <div id="overlay"></div>
       <button type="button" class="button" id="start" >Start</button>
     </div>
+    <div id="enterName-modal">
+        <div id="enterName-content">
+              <h3 class="enterName-title" id="enterName-title">You got a new high score! Please enter your name.</h4>
+            </div>
+            <div class="enterName-body">
+              <form class="form-inline">
+                 <div class="form-group">
+                   <div class="input-group">
+                     <input type="text" class="form-control" value="Guest" maxlength="10" placeholder="Guest">
+                   </div>
+                 </div>
+                 <button id="playerName" type="button" class="button" data-dismiss="enterName-modal">Submit!</button>
+               </form>
+        </div>
+    </div>
     <div id="endScreen">
       <div id="endScreenContent">
         <h1 id ="txtEndTitle"> Game Over!</h1>
