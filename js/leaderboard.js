@@ -10,12 +10,27 @@ function checkHighScore(score) {
     console.log(lowestScore)
 
     if(score > lowestScore) {
+        setTimeout(() => {
+            $('#enterName-modal').css({"display":"block"})
+        }, 10)
 
-        const name = prompt("You got a highscore! Please enter your name:", "Guest"); 
-        const newScore = { name, score };
-        saveHighScore(newScore, highScores);
-        console.log(highScores)
-        showHighScores()
+        $('#playerName').click(() => {
+            $('#enterName-modal').css({"display":"none"})
+            const name = $('input:text').val();
+            const newScore = { name, score };
+            saveHighScore(newScore, highScores);
+            console.log(highScores)
+            showHighScores()
+            setTimeout(() => {
+                EndScreen()
+            }, 30)
+         
+         });
+    }
+    else {
+        setTimeout(() => {
+            EndScreen()
+        }, 10)
     }
 }
 
