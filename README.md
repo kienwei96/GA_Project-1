@@ -54,7 +54,7 @@ The **API** is used to randomly generate a sentence for the game.
    <img src="../image/Game_Explodepage.png" width ="500px" />
   </td></tr></table>
 
-4. If there is any high scores achieved, there will be a modal box prompt to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for the leaderboard update.
+4. If there is any new high scores achieved, there will be a modal box prompt to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for the leaderboard update.
 <table><tr><td>
    <img src="../image/Game_Highscores.png" width ="500px" />
   </td></tr></table>
