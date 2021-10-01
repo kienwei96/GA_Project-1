@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Chewy);
 
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+
 @keyframes blink {
   from {
     visibility: visible;
@@ -202,11 +204,23 @@
 #enterName-body {
   display: flex;
   justify-content: space-between;
+  border-radius: 2px;
 }
 
 input {
-  height: 40px;
-  width: 300px;
+  height: 50px;
+  width: 250px;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  font-family: "Playfair Display";
+}
+
+#enterName-title {
+  font-family: "Playfair Display";
+  letter-spacing: 2px;
+  font-size: 20px;
 }
 /* modal-about class (END) */
 
@@ -231,6 +245,7 @@ input {
   background-color: transparent;
   margin: 80px;
   text-align: center;
+  font-size: 20px;
 }
 
 #btnReplay {
