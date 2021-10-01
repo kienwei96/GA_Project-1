@@ -25,9 +25,10 @@ The **API** is used to randomly generate a sentence for the game.
 ## Accomplishments
 
 - Learnt about canvas rendering 2D context
+- Replace prompt box with modal box
 - Apply OOP
 - The sentence are randomly generated every time by calling public API.
-- The highest score able to keep record(even though reload the page) by using local storage.
+- The Top 5 highest score able to keep record(even though reload the page) by using local storage.
 
 ## Game Instructions
 
@@ -53,7 +54,7 @@ The **API** is used to randomly generate a sentence for the game.
    <img src="../image/Game_Explodepage.png" width ="500px" />
   </td></tr></table>
 
-4. If there is any high scores achieved, there will be a prompt box appear to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for leaderboard update.
+4. If there is any high scores achieved, there will be a modal box prompt to inform player that he/she beat one of the top 5 high scorers and request players to enter their respective name for the leaderboard update.
 <table><tr><td>
    <img src="../image/Game_Highscores.png" width ="500px" />
   </td></tr></table>
