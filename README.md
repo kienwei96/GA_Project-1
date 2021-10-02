@@ -13,7 +13,7 @@ https://kienwei96.github.io/Typing-game/html/index.html
 - **HTML**
 - **CSS**
 - **Javascript**
-- **Jquery** is used to manage DOM manipulation
+- **Jquery** & **VanillaJS** is used to manage DOM manipulation
 - **Jquery UI** is used for shake effect
 - **Ajax** is used to request and access random sentence from the API library
 
