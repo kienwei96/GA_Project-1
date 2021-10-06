@@ -1,4 +1,5 @@
-# Typing-game
+# Software Engineering Immersive - Project 1
+## Typing-game 
 
 ## Game Description
 
