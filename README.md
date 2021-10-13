@@ -7,7 +7,7 @@ This is a typing game which the player required to use keyboard and type the giv
 
 ## Game Link
 
-https://kienwei96.github.io/Typing-game/html/index.html
+https://kienwei96.github.io/GA_Project-1/html/index.html
 
 ## Technologies
 
